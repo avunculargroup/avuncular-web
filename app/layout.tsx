@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+const geistMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
   variable: "--font-ibm-plex-mono",
+  weight: "100 900",
 });
 
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
   variable: "--font-ibm-plex-sans",
+  weight: "100 900",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ibmPlexMono.variable} ${ibmPlexSans.variable} font-sans antialiased`}
+        className={`${geistMono.variable} ${geistSans.variable} font-sans antialiased`}
       >
         {children}
       </body>

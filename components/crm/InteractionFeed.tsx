@@ -10,7 +10,7 @@ interface Interaction {
   occurred_at: string;
   summary?: string | null;
   raw_content?: string | null;
-  extracted_data?: Record<string, unknown> | null;
+  extracted_data?: unknown;
   source?: string;
 }
 
